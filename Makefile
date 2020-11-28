@@ -1,9 +1,9 @@
 output=ckript
-mem_flags=-s ALLOW_MEMORY_GROWTH -s MAXIMUM_MEMORY=4GB
+mem_flags=-s INITIAL_MEMORY=100MB
 exports=-s "EXTRA_EXPORTED_RUNTIME_METHODS=['ccall']"
 
 all:
-	emcc -o $(output).html src/*.cpp -O3 -s WASM=1 $(mem_flags) $(exports)
+	emcc -o $(output).html src/*.cpp -O3 -s WASM=1 $(mem_flags) $(exports) -s FILESYSTEM=0
 	rm $(output).html
 
 clean:
