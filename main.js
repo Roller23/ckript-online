@@ -9,6 +9,7 @@
   // }
   worker.onmessage = function(message) {
     if (message.data === true) {
+      console.log('git input request')
       worker.postMessage({type: 'input', content: prompt()});
       return;
     }

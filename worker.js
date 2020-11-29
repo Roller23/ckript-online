@@ -34,6 +34,7 @@ let inputResolve = null
 async function getInput() {
   return new Promise((resolve, reject) => {
     postMessage(true);
+    console.log('posted input request');
     inputResolve = resolve;
   });
 }
