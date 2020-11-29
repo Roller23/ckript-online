@@ -101,4 +101,31 @@ body {
   white-space: break-spaces;
 }
 
+@media (max-width: 700px) {
+  .top-bar {
+    height: 40px;
+  }
+
+  .split-wrapper {
+    height: calc(100vh - 40px);
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 3px 8px;
+  }
+
+  .code-wrap, .terminal-wrap {
+    width: 100%;
+  }
+
+  .code-wrap {
+    height: 70%;
+  }
+
+  .terminal-wrap {
+    height: 30%;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
