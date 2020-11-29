@@ -93,6 +93,7 @@ body {
   background-color: #151515;
   font-family: "Ubuntu Mono", monospace;
   padding: 10px 15px;
+  overflow: auto;
 }
 .split-wrapper .terminal-wrap .line {
   color: #c9c9c9;
