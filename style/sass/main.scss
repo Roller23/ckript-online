@@ -6,9 +6,18 @@ body {
   margin: 0px;
 }
 
+.main-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top-bar {
+  height: 60px;
+}
+
 .split-wrapper {
   width: 100%;
-  height: calc(100% - 40px);
+  height: calc(100vh - 60px);
   display: flex;
   .code-wrap {
     height: 100%;
