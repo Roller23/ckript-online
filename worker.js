@@ -29,6 +29,15 @@ var Module = {
   }
 };
 
+let inputResolve = null
+
+async function getInput() {
+  return new Promise((resolve, reject) => {
+    postMessage(true);
+    inputResolve = resolve;
+  });
+}
+
 function runCode(code) {
   Module.ccall('runCode', null, ['string'], [code]);
 }
@@ -37,4 +46,8 @@ importScripts('ckript.js');
 
 onmessage = function(message) {
   runCode(message.data);
+  if (inputResolve && message.data.type === 'input') {
+    inputResolve(message.data.content);
+    inputResolve = null;
+  }
 }
