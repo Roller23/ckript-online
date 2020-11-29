@@ -31,6 +31,8 @@ body {
 
 .top-bar {
   height: 60px;
+  background-color: #151515;
+  box-shadow: black 1px 1px 1px 1px;
 }
 
 .split-wrapper {
@@ -38,7 +40,7 @@ body {
   height: calc(100vh - 60px);
   display: flex;
   gap: 10px;
-  background-color: gray;
+  background-color: rgb(65, 65, 65);
   padding: 20px;
   .code-wrap {
     height: 100%;
