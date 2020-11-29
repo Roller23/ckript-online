@@ -50,5 +50,5 @@ onmessage = function(message) {
     // inputResponse = message.data.content;
     return;
   }
-  runCode(message.data);
+  runCode(message.data.content);
 }
