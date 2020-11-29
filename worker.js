@@ -30,12 +30,13 @@ var Module = {
 };
 
 let inputResponse = null;
+let db = null;
+indexedDB.open("SharedData").onsuccess = function(event) {
+  db = event.target.result;
+};
 
 function getInput() {
-  while (inputResponse === null);
-  let res = inputResponse;
-  inputResponse = null;
-  return res;
+  return "";
 }
 
 function runCode(code) {
@@ -46,7 +47,7 @@ importScripts('ckript.js');
 
 onmessage = function(message) {
   if (message.data.type === 'input') {
-    inputResponse = message.data.content;
+    // inputResponse = message.data.content;
     return;
   }
   runCode(message.data);

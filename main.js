@@ -1,6 +1,11 @@
 (function() {
   let output = document.querySelector('.output');
   let worker = new Worker('worker.js');
+  let db = null;
+  indexedDB.open("SharedData").onsuccess = function(event) {
+    db = event.target.result;
+  };
+
   // Module.printCallback = function(text) {
   //   // let div = document.createElement('div');
   //   // div.innerText = text;
