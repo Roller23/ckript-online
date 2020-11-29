@@ -13,8 +13,7 @@
     runCode(code);
   });
 
-  let initialCode = `
-  // Welcome to Ckript online interpreter
+  let initialCode = ` // Welcome to Ckript online interpreter
   // Read the language documentation here (Work in progress)
   // Check out the github repositories
   // https://github.com/Roller23/ckript-lang
@@ -96,8 +95,7 @@
 
   // while, for, if, else statements and the like work just like in any other C-like language
 
-  // Check out the documentation for more in-depth info (Work in progress)
-  `.trim();
+  // Check out the documentation for more in-depth info (Work in progress)`;
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
     lineNumbers: true,
