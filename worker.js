@@ -37,6 +37,5 @@ var Module=typeof Module!=="undefined"?Module:{};var moduleOverrides={};var key;
 
 
 onmessage = function(message) {
-  console.log('running', message)
-  runCode(message);
+  runCode(message.data);
 }
