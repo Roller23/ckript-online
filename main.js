@@ -141,7 +141,8 @@
     smartIndent: true,
     autofocus: true,
     autoCloseBrackets: true,
-    matchBrackets: true
+    matchBrackets: true,
+    highlightSelectionMatches: true
   });
 
   if (typeof localStorage.lastCode === 'string') {
