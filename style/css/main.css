@@ -109,7 +109,6 @@ body {
   .split-wrapper {
     height: calc(100vh - 40px) !important;
     flex-wrap: wrap !important;
-    gap: 0px !important;
   }
 
   .btn {
