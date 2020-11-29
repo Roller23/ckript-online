@@ -97,6 +97,7 @@ body {
 .split-wrapper .terminal-wrap .line {
   color: #c9c9c9;
   word-break: break-word;
+  white-space: break-spaces;
 }
 
 /*# sourceMappingURL=main.css.map */
