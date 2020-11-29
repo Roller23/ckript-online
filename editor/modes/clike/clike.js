@@ -266,37 +266,21 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
       return words.propertyIsEnumerable(word);
     }
   }
-  var cKeywords = "auto if break case register continue return default do sizeof " +
-    "static else struct switch extern typedef union for goto while enum const " +
-    "volatile inline restrict asm fortran";
+  var cKeywords = "if break continue return else for while const";
 
-  // Keywords from https://en.cppreference.com/w/cpp/keyword includes C++20.
-  var cppKeywords = "alignas alignof and and_eq audit axiom bitand bitor catch " +
-  "class compl concept constexpr const_cast decltype delete dynamic_cast " +
-  "explicit export final friend import module mutable namespace new noexcept " +
-  "not not_eq operator or or_eq override private protected public " +
-  "reinterpret_cast requires static_assert static_cast template this " +
-  "thread_local throw try typeid typename using virtual xor xor_eq";
+  var cppKeywords = "class del alloc"
 
-  var objCKeywords = "bycopy byref in inout oneway out self super atomic nonatomic retain copy " +
-  "readwrite readonly strong weak assign typeof nullable nonnull null_resettable _cmd " +
-  "@interface @implementation @end @protocol @encode @property @synthesize @dynamic @class " +
-  "@public @package @private @protected @required @optional @try @catch @finally @import " +
-  "@selector @encode @defs @synchronized @autoreleasepool @compatibility_alias @available";
+  var objCKeywords = ""
 
-  var objCBuiltins = "FOUNDATION_EXPORT FOUNDATION_EXTERN NS_INLINE NS_FORMAT_FUNCTION " +
-  " NS_RETURNS_RETAINEDNS_ERROR_ENUM NS_RETURNS_NOT_RETAINED NS_RETURNS_INNER_POINTER " +
-  "NS_DESIGNATED_INITIALIZER NS_ENUM NS_OPTIONS NS_REQUIRES_NIL_TERMINATION " +
-  "NS_ASSUME_NONNULL_BEGIN NS_ASSUME_NONNULL_END NS_SWIFT_NAME NS_REFINED_FOR_SWIFT"
+  var objCBuiltins = ""
 
   // Do not use this. Use the cTypes function below. This is global just to avoid
   // excessive calls when cTypes is being called multiple times during a parse.
-  var basicCTypes = words("int long char short double float unsigned signed " +
-    "void bool");
+  var basicCTypes = words("int double void bool func arr obj");
 
   // Do not use this. Use the objCTypes function below. This is global just to avoid
   // excessive calls when objCTypes is being called multiple times during a parse.
-  var basicObjCTypes = words("SEL instancetype id Class Protocol BOOL");
+  var basicObjCTypes = words("bool");
 
   // Returns true if identifier is a "C" type.
   // C type is defined as those that are reserved by the compiler (basicTypes),
@@ -308,11 +292,11 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
 
   // Returns true if identifier is a "Objective C" type.
   function objCTypes(identifier) {
-    return cTypes(identifier) || contains(basicObjCTypes, identifier);
+    return false;
   }
 
-  var cBlockKeywords = "case do else for if switch while struct enum union";
-  var cDefKeywords = "struct enum union";
+  var cBlockKeywords = "case do else for if while";
+  var cDefKeywords = "";
 
   function cppHook(stream, state) {
     if (!state.startOfLine) return false
