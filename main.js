@@ -3,8 +3,7 @@
   Module.printCallback = function(text) {
     let div = document.createElement('div');
     div.innerText = text;
-    output.appendChild(div);
-    console.log(output.offsetHeight); // force reflow
+    setTimeout(() => output.appendChild(div), 0);
   }
   document.querySelector('button').addEventListener('click', e => {
     document.querySelector('.output').innerHTML = '';
