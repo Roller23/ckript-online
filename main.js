@@ -14,7 +14,10 @@
   });
 
   let initialCode = `
-    // Write code here...
+    // Welcome to Ckript online interpreter
+    // Read the language documentation here
+    str greeting = 'Hello world';
+    println(greeting);
   `;
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {

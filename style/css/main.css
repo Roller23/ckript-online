@@ -59,6 +59,7 @@ body {
 }
 .split-wrapper .terminal-wrap .line {
   color: #c9c9c9;
+  word-break: break-word;
 }
 
 /*# sourceMappingURL=main.css.map */
