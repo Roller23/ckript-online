@@ -15,6 +15,9 @@
 
   document.querySelector('.get-docs').addEventListener('click', e => {
     alert("Work in progress! Read https://github.com/Roller23/ckript-lang in the meantime");
+    if (confirm('Would you like to paste example code again? (Will overwrite current code')) {
+      editor.setValue(initialCode);
+    }
   });
 
   let initialCode = `  // Welcome to Ckript online interpreter
