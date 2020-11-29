@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0px;
+}
+
 .split-wrapper {
   width: 100%;
   height: calc(100% - 40px);
