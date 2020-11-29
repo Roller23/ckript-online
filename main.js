@@ -13,7 +13,7 @@
     runCode(code);
   });
 
-  let initialCode = ` // Welcome to Ckript online interpreter
+  let initialCode = `  // Welcome to Ckript online interpreter
   // Read the language documentation here (Work in progress)
   // Check out the github repositories
   // https://github.com/Roller23/ckript-lang
