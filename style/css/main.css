@@ -47,11 +47,13 @@ body {
   box-shadow: black 1px 1px 1px 1px;
   position: relative;
 }
-.top-bar .run-code {
+.top-bar .run-code, .top-bar .get-docs {
   display: block;
   position: absolute;
-  left: 50%;
   top: 50%;
+}
+.top-bar .run-code {
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 .top-bar .run-code:active {
@@ -60,10 +62,7 @@ body {
   transform: translate(calc(-50% - 2px), calc(-50% - 2px));
 }
 .top-bar .get-docs {
-  display: block;
-  position: absolute;
   right: 20px;
-  top: 50%;
   transform: translateY(-50%);
 }
 .top-bar .get-docs:active {
