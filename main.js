@@ -142,7 +142,7 @@
     autofocus: true,
     autoCloseBrackets: true,
     matchBrackets: true,
-    highlightSelectionMatches: true
+    highlightSelectionMatches: {showToken: /\w/, annotateScrollbar: true}
   });
 
   if (typeof localStorage.lastCode === 'string') {
