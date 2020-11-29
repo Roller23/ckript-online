@@ -9,7 +9,7 @@
   // }
   worker.onmessage = function(message) {
     let div = document.createElement('div');
-    div.innerText = text;
+    div.innerText = message.data;
     output.appendChild(div);
   }
   document.querySelector('button').addEventListener('click', e => {
