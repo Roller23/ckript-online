@@ -30,14 +30,13 @@
     }
   };
   
-  let inputResolve = null
+  let inputResponse = null;
   
-  async function getInput() {
-    return new Promise((resolve, reject) => {
-      postMessage(true);
-      console.log('posted input request');
-      inputResolve = resolve;
-    });
+  function getInput() {
+    while (inputResponse == null);
+    let res = inputResponse;
+    inputResponse = null;
+    return res;
   }
   
   function runCode(code) {
@@ -49,8 +48,7 @@
   onmessage = function(message) {
     runCode(message.data);
     if (inputResolve && message.data.type === 'input') {
-      inputResolve(message.data.content);
-      inputResolve = null;
+      inputResponse = message.data.content;
     }
   }
 })();
