@@ -141,8 +141,7 @@
     smartIndent: true,
     autofocus: true,
     autoCloseBrackets: true,
-    matchBrackets: true,
-    
+    matchBrackets: true
   });
 
   if (typeof localStorage.lastCode === 'string') {
@@ -151,5 +150,6 @@
 
   let saveCodeInterval = setInterval(() => {
     localStorage.lastCode = editor.getValue();
+    editor.hint.anyword();
   }, 1000);
 })();
