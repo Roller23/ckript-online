@@ -55,7 +55,7 @@ body {
   border-radius: 10px;
   background-color: #151515;
   font-family: "Ubuntu Mono", monospace;
-  padding: 10px;
+  padding: 10px 15px;
 }
 .split-wrapper .terminal-wrap .line {
   color: white;
