@@ -52,13 +52,15 @@ body {
   position: absolute;
   top: 50%;
 }
+.top-bar .run-code:active, .top-bar .get-docs:active {
+  transition: 0s;
+  box-shadow: 0px 0px 0 0px #084608;
+}
 .top-bar .run-code {
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .top-bar .run-code:active {
-  transition: 0s;
-  box-shadow: 0px 0px 0 0px #084608;
   transform: translate(calc(-50% - 2px), calc(-50% - 2px));
 }
 .top-bar .get-docs {
@@ -66,8 +68,6 @@ body {
   transform: translateY(-50%);
 }
 .top-bar .get-docs:active {
-  transition: 0s;
-  box-shadow: 0px 0px 0 0px #084608;
   transform: translate(calc(-50% - 2px), -2px);
 }
 
