@@ -15,7 +15,10 @@
 
   let initialCode = `
 // Welcome to Ckript online interpreter
-// Read the language documentation here
+// Read the language documentation here (Work in progress)
+// Check out the github repositories
+// https://github.com/Roller23/ckript-lang
+// https://github.com/Roller23/ckript-online
 
 // Quick start:
 
