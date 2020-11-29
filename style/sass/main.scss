@@ -39,6 +39,7 @@ body {
   transition: 0.3s;
   font-family: "Arial Black", sans-serif;
   font-weight: bold;
+  padding: 5px 15px;
 }
 
 .top-bar {
@@ -66,7 +67,7 @@ body {
     right: 20px;
     transform: translateY(-50%);
     &:active {
-      transform: translate(calc(-50% - 2px), -2px);
+      transform: translate(-2px, calc(-50% - 2px));
     }
   }
 }
