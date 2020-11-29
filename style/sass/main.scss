@@ -121,4 +121,11 @@ body {
   .terminal-wrap {
     height: 30% !important;
   }
+  .run-code {
+    left: 20px !important;
+    transform: translateY(-50%) !important;
+    &:active {
+      transform: translate(-2px, calc(-50% - 2px)) !important;
+    }
+  }
 }
