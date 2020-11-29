@@ -30,7 +30,7 @@
     autocapitalize: false
   });
 
-  if (localStorage.lastCode) {
+  if (typeof localStorage.lastCode === 'string') {
     editor.setValue(localStorage.lastCode);
   }
 
