@@ -55,5 +55,8 @@ body {
   border-radius: 10px;
   background-color: #151515;
 }
+.split-wrapper .terminal-wrap .line {
+  color: white;
+}
 
 /*# sourceMappingURL=main.css.map */
