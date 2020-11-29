@@ -150,8 +150,5 @@
 
   let saveCodeInterval = setInterval(() => {
     localStorage.lastCode = editor.getValue();
-    console.log(CodeMirror.hint.anyword(editor, {
-      word: new RegExp("\\b" + "test" + "\\b")
-    }))
   }, 1000);
 })();
