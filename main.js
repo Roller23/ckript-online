@@ -66,7 +66,7 @@ del mem1; // free memory from the heap, both mem1 and mem2 should no longer be u
 
 class Person(str name, int age); // declare a class
 
-obj Mark = Person("Mark", 25);
+obj Mark = Person("Mark", 25); // create an instance
 
 println(Mark);
 println(Mark.age);
@@ -86,6 +86,8 @@ alloc obj a = Test(5, function(void) void {
 });
 
 a.method();
+
+// Check out the documentation for more in-depth info
 
   `.trim();
 
