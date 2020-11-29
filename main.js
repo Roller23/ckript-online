@@ -2,6 +2,7 @@
   Module.printCallback = function(text) {
     let div = document.createElement('div');
     div.innerText = text;
+    console.log(text);
     document.querySelector('.output').appendChild(div);
   }
   document.querySelector('button').addEventListener('click', e => {
