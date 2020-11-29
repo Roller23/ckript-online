@@ -150,6 +150,6 @@
 
   let saveCodeInterval = setInterval(() => {
     localStorage.lastCode = editor.getValue();
-    CodeMirror.hint.anyword(editor);
+    console.log(CodeMirror.hint.anyword(editor))
   }, 1000);
 })();
