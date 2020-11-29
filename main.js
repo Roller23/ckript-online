@@ -1,12 +1,13 @@
 (function() {
   let output = document.querySelector('.output');
+  let terminal = document.querySelector('.terminal-wrap');
   Module.printCallback = function(text) {
     console.log('WASM output:\n', text);
     let div = document.createElement('div');
     div.classList.add('line');
     div.innerText = text;
     output.appendChild(div);
-    output.scrollTop = output.scrollHeight * 2;
+    terminal.scrollTop = terminal.scrollHeight * 2;
   }
   document.querySelector('.run-code').addEventListener('click', e => {
     output.innerHTML = '';
