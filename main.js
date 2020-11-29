@@ -49,6 +49,10 @@ arr tableSquared = (function>(arr tab) arr { // capture outside variables with t
 
 println(tableSquared);
 
+#tableSquared[0] = 123; // reassign an array cell (# is required)
+
+println(tableSquared);
+
 // memory allocation
 
 alloc int mem1 = 5; // 5 is allocated on the heap and 'mem1' is a pointer to that location
@@ -86,6 +90,8 @@ alloc obj a = Test(5, function(void) void {
 });
 
 a.method();
+
+// while, for, if, else statements and the like work just like in any other C-like language
 
 // Check out the documentation for more in-depth info
 
