@@ -183,7 +183,7 @@ class NativePrintln : public NativeFunction {
         i++;
       }
       std::cout << std::endl;
-      std::cout << std::flush;
+      std::fflush(stdout);
       return {Utils::VOID};
     }
 };
