@@ -6,11 +6,11 @@
     div.innerText = text;
     output.appendChild(div);
   }
-  document.querySelector('button').addEventListener('click', e => {
-    document.querySelector('.output').innerHTML = '';
-    let code = editor.getValue();
-    runCode(code);
-  });
+  // document.querySelector('button').addEventListener('click', e => {
+  //   document.querySelector('.output').innerHTML = '';
+  //   let code = editor.getValue();
+  //   runCode(code);
+  // });
 
   let initialCode = `
     // Write code here...
