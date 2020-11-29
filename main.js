@@ -14,42 +14,41 @@
   });
 
   let initialCode = `
-    // Welcome to Ckript online interpreter
-    // Read the language documentation here
+// Welcome to Ckript online interpreter
+// Read the language documentation here
 
-    // Quick start:
+// Quick start:
 
-    // Creating variables
+// Creating variables
 
-    str greeting = 'Hello world';
-    const double PI = 3.1415; // non reassignable
-    // printing to the console
-    println(greeting, 'PI is', PI);
+str greeting = 'Hello world';
+const double PI = 3.1415; // non reassignable
+// printing to the console
+println(greeting, 'PI is', PI);
 
-    // functions
+// functions
 
-    func square = function(int x) int {
-      return x * x;
-    };
+func square = function(int x) int {
+  return x * x;
+};
 
-    println('6 squared is ' + square(6)); // string concatenation
+println('6 squared is ' + square(6)); // string concatenation
 
-    // arrays
+// arrays
 
-    arr table = array(1, 2, 3) int;
+arr table = array(1, 2, 3) int;
 
-    arr tableSquared = (function>(arr tab) arr { // capture outside variables with the '>' operator
-      int i = 0;
-      arr result = array() int;
-      for (; i < size(tab); i += 1) {
-        result += square(tab[i]);
-      }
-      return result;
-    })(table); // immediate function invocation
+arr tableSquared = (function>(arr tab) arr { // capture outside variables with the '>' operator
+  int i = 0;
+  arr result = array() int;
+  for (; i < size(tab); i += 1) {
+    result += square(tab[i]); // appending to the array
+  }
+  return result;
+})(table); // immediate function invocation
 
-    println(tableSquared);
-
-  `.trim().split('\n').map(s => s.trim()).join('\n');
+println(tableSquared);
+  `.trim();
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
     lineNumbers: true,
