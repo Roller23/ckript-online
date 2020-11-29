@@ -137,7 +137,8 @@
     allowDropFileTypes: ['text/plain', 'text/*'],
     spellcheck: false,
     autocorrect: false,
-    autocapitalize: false
+    autocapitalize: false,
+    smartIndent: true
   });
 
   if (typeof localStorage.lastCode === 'string') {
