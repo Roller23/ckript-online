@@ -6,7 +6,7 @@
     div.classList.add('line');
     div.innerText = text;
     output.appendChild(div);
-    output.scrollTo(output.scrollHeight * 2);
+    output.scroll(0, output.scrollHeight * 2);
   }
   document.querySelector('.run-code').addEventListener('click', e => {
     output.innerHTML = '';
