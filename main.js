@@ -12,11 +12,15 @@
     runCode(code);
   });
 
+  let initialCode = `
+    // Write code here...
+  `;
+
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
     lineNumbers: true,
     mode: 'text/x-c',
     theme: 'monokai',
-    value: '// Write code here...',
+    value: initialCode.trim(),
     indentUnit: 2,
     tabSize: 4,
     indentWithTabs: true,

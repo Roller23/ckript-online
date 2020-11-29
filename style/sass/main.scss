@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+.split-wrapper {
+  width: 100%;
+  height: calc(100% - 40px);
+  display: flex;
+  .code-wrap {
+    height: 100%;
+    width: 70%;
+  }
+  .terminal-wrap {
+    height: 100%;
+    width: 30%;
+  }
+}

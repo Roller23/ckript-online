@@ -1,3 +1,19 @@
+* {
+  box-sizing: border-box;
+}
 
+.split-wrapper {
+  width: 100%;
+  height: calc(100% - 40px);
+  display: flex;
+}
+.split-wrapper .code-wrap {
+  height: 100%;
+  width: 70%;
+}
+.split-wrapper .terminal-wrap {
+  height: 100%;
+  width: 30%;
+}
 
 /*# sourceMappingURL=main.css.map */
