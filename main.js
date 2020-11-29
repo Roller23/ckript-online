@@ -138,7 +138,8 @@
     spellcheck: false,
     autocorrect: false,
     autocapitalize: false,
-    smartIndent: true
+    smartIndent: true,
+    autofocus: true
   });
 
   if (typeof localStorage.lastCode === 'string') {
