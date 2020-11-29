@@ -38,3 +38,5 @@ window.onerror = function(event) {
 function runCode(code) {
   Module.ccall('runCode', null, ['string'], [code]);
 }
+
+let promptAsked = true;
