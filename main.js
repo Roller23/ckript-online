@@ -8,12 +8,9 @@
   }
   document.querySelector('button').addEventListener('click', e => {
     document.querySelector('.output').innerHTML = '';
-    let code = document.querySelector('textarea').value;
+    let code = editor.getValue();
     runCode(code);
   });
-
-
-
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
     lineNumbers: true,
@@ -33,6 +30,10 @@
   if (typeof localStorage.lastCode === 'string') {
     editor.setValue(localStorage.lastCode);
   }
+
+  let saveCodeInterval = setInterval(() => {
+    localStorage.lastCode = editor.getValue();
+  }, 1000);
 
 
 })();
