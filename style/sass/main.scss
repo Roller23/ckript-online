@@ -108,6 +108,8 @@ body {
   .split-wrapper {
     height: calc(100vh - 40px) !important;
     flex-wrap: wrap !important;
+    gap: 10px !important;
+    padding: 10px !important;
   }
   .btn {
     padding: 3px 8px !important;
@@ -120,6 +122,7 @@ body {
   }
   .terminal-wrap {
     height: 30% !important;
+    border-radius: 10px 10px 0px 0px !important;
   }
   .run-code {
     left: 20px !important;
