@@ -32,7 +32,7 @@ var Module = {
 let inputResponse = null;
 
 function getInput() {
-  while (inputResponse == null);
+  while (inputResponse === null);
   let res = inputResponse;
   inputResponse = null;
   return res;
