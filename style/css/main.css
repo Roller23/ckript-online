@@ -52,7 +52,7 @@ body {
 .top-bar .run-code:active {
   transition: 0s;
   box-shadow: 0px 0px 0 0px #084608;
-  transform: translate(-2px, 2px);
+  transform: translate(calc(-50% - 2px), calc(-50% - 2px));
 }
 
 .split-wrapper {
