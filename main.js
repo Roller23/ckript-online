@@ -85,6 +85,16 @@
 
   println(tableSquared);
 
+  // preallocated arrays
+
+	arr preallocated = array() [3] double;
+
+	#preallocated[0] = 1.23;
+	#preallocated[1] = 4.56;
+	#preallocated[2] = 7.89;
+
+	println(preallocated);
+
   // memory allocation
 
   alloc int mem1 = 5; // 5 is allocated on the heap and 'mem1' is a pointer to that location
