@@ -45,8 +45,9 @@ function runCode(code) {
 importScripts('ckript.js');
 
 onmessage = function(message) {
-  runCode(message.data);
   if (message.data.type === 'input') {
     inputResponse = message.data.content;
+    return;
   }
+  runCode(message.data);
 }
