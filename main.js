@@ -7,6 +7,11 @@
   //   // setTimeout(() => output.appendChild(div), 0);
 
   // }
+  worker.onmessage = function(message) {
+    let div = document.createElement('div');
+    div.innerText = text;
+    output.appendChild(div);
+  }
   document.querySelector('button').addEventListener('click', e => {
     document.querySelector('.output').innerHTML = '';
     let code = document.querySelector('textarea').value;

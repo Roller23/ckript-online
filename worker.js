@@ -10,6 +10,7 @@ var Module = {
       // text = text.replace(/>/g, "&gt;");
       // text = text.replace('\n', '<br>', 'g');
       console.log('worker got', text);
+      postMessage(text);
     };
   })(),
   printErr: function(text) {
