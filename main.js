@@ -1,5 +1,6 @@
 (function() {
   let output = document.querySelector('.output');
+  let worker = new Worker('worker.js');
   Module.printCallback = function(text) {
     let div = document.createElement('div');
     div.innerText = text;
@@ -7,7 +8,10 @@
   }
   document.querySelector('button').addEventListener('click', e => {
     document.querySelector('.output').innerHTML = '';
-    console.log('sending to c', document.querySelector('textarea').value);
-    runCode(document.querySelector('textarea').value);
+    let code = document.querySelector('textarea').value;
+    console.log('sending to c', code);
+    let data = {Module, code};
+    worker.postMessage(data);
+    // runCode(document.querySelector('textarea').value);
   });
 })();
