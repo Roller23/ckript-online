@@ -17,89 +17,89 @@
     alert("Work in progress! Read https://github.com/Roller23/ckript-lang in the meantime");
   });
 
-  let initialCode = `  // Welcome to Ckript online interpreter
-  // Read the language documentation here (Work in progress)
-  // Check out the github repositories
-  // https://github.com/Roller23/ckript-lang
-  // https://github.com/Roller23/ckript-online
+  let initialCode = `    // Welcome to Ckript online interpreter
+    // Read the language documentation here (Work in progress)
+    // Check out the github repositories
+    // https://github.com/Roller23/ckript-lang
+    // https://github.com/Roller23/ckript-online
 
-  // Quick start:
+    // Quick start:
 
-  // Creating variables
+    // Creating variables
 
-  str greeting = 'Hello world';
-  const double PI = 3.1415; // non reassignable
-  // printing to the console
-  println(greeting, 'PI is', PI);
+    str greeting = 'Hello world';
+    const double PI = 3.1415; // non reassignable
+    // printing to the console
+    println(greeting, 'PI is', PI);
 
-  // functions
+    // functions
 
-  func square = function(int x) int {
-    return x * x;
-  };
+    func square = function(int x) int {
+      return x * x;
+    };
 
-  println('6 squared is ' + square(6)); // string concatenation
+    println('6 squared is ' + square(6)); // string concatenation
 
-  // arrays
+    // arrays
 
-  arr table = array(1, 2, 3) int;
+    arr table = array(1, 2, 3) int;
 
-  arr tableSquared = (function>(arr tab) arr { // capture outside variables with the '>' operator
-    int i = 0;
-    arr result = array() int;
-    for (; i < size(tab); i += 1) {
-      result += square(tab[i]); // appending to the array
-    }
-    return result;
-  })(table); // immediate function invocation
+    arr tableSquared = (function>(arr tab) arr { // capture outside variables with the '>' operator
+      int i = 0;
+      arr result = array() int;
+      for (; i < size(tab); i += 1) {
+        result += square(tab[i]); // appending to the array
+      }
+      return result;
+    })(table); // immediate function invocation
 
-  println(tableSquared);
+    println(tableSquared);
 
-  #tableSquared[0] = 123; // reassign an array cell (# is required)
+    #tableSquared[0] = 123; // reassign an array cell (# is required)
 
-  println(tableSquared);
+    println(tableSquared);
 
-  // memory allocation
+    // memory allocation
 
-  alloc int mem1 = 5; // 5 is allocated on the heap and 'mem1' is a pointer to that location
-  ref int mem2 = mem1; // 'mem2' points to the 'mem1' location
+    alloc int mem1 = 5; // 5 is allocated on the heap and 'mem1' is a pointer to that location
+    ref int mem2 = mem1; // 'mem2' points to the 'mem1' location
 
-  mem2 += 8;
+    mem2 += 8;
 
-  println('mem1 is @1, mem2 is @2'(mem1, mem2)); // string interpolation
+    println('mem1 is @1, mem2 is @2'(mem1, mem2)); // string interpolation
 
-  // Functions can accept refs, arrays can hold refs
+    // Functions can accept refs, arrays can hold refs
 
-  del mem1; // free memory from the heap, both mem1 and mem2 should no longer be used
+    del mem1; // free memory from the heap, both mem1 and mem2 should no longer be used
 
-  // Classes and objects
+    // Classes and objects
 
-  class Person(str name, int age); // declare a class
+    class Person(str name, int age); // declare a class
 
-  obj Mark = Person("Mark", 25); // create an instance
+    obj Mark = Person("Mark", 25); // create an instance
 
-  println(Mark);
-  println(Mark.age);
+    println(Mark);
+    println(Mark.age);
 
-  $Mark.age = 30; // reassign a member ($ is required)
+    $Mark.age = 30; // reassign a member ($ is required)
 
-  println(Mark);
+    println(Mark);
 
-  // 'this' variable
+    // 'this' variable
 
-  // Only allocated objects can have function members that make use of 'this'
+    // Only allocated objects can have function members that make use of 'this'
 
-  class Test(int number, func method);
+    class Test(int number, func method);
 
-  alloc obj a = Test(5, function(void) void {
-    println('My number is', this.number);
-  });
+    alloc obj a = Test(5, function(void) void {
+      println('My number is', this.number);
+    });
 
-  a.method();
+    a.method();
 
-  // while, for, if, else statements and the like work just like in any other C-like language
+    // while, for, if, else statements and the like work just like in any other C-like language
 
-  // Check out the documentation for more in-depth info (Work in progress)`;
+    // Check out the documentation for more in-depth info (Work in progress)`;
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
     lineNumbers: true,
