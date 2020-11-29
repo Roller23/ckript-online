@@ -120,6 +120,9 @@
 
   // while, for, if, else statements and the like work just like in any other C-like language
 
+  // Click 'Run' to run this example
+  // The code is interpreted by your browser thanks to the wonders of WebAssembly
+
   // Check out the documentation for more in-depth info (Work in progress)`;
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
