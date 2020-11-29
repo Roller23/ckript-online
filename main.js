@@ -1,9 +1,10 @@
 (function() {
+  let output = document.querySelector('.output');
   Module.printCallback = function(text) {
     let div = document.createElement('div');
     div.innerText = text;
-    document.querySelector('.output').appendChild(div);
-    void(document.documentElement.offsetHeight); // force reflow
+    output.appendChild(div);
+    console.log(output.offsetHeight); // force reflow
   }
   document.querySelector('button').addEventListener('click', e => {
     document.querySelector('.output').innerHTML = '';
