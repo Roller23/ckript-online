@@ -120,6 +120,9 @@
 
   // while, for, if, else statements and the like work just like in any other C-like language
 
+  // Ckript includes a small native standard library, a short overview can be found there
+  // https://github.com/Roller23/ckript-lang#standard-library
+
   // Click 'Run' to run this example
   // The code is interpreted by your browser thanks to the wonders of WebAssembly
 
