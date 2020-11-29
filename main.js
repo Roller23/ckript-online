@@ -18,7 +18,7 @@
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
     lineNumbers: true,
     mode: 'text/x-c',
-    theme: 'monokai',
+    theme: 'midnight',
     value: '// Write code here...',
     indentUnit: 2,
     tabSize: 4,

@@ -268,7 +268,7 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
   }
   var cKeywords = "if break continue return else for while const";
 
-  var cppKeywords = "class del alloc"
+  var cppKeywords = "class del alloc ref"
 
   var objCKeywords = ""
 
