@@ -33,6 +33,26 @@ body {
   height: 60px;
   background-color: #151515;
   box-shadow: black 1px 1px 1px 1px;
+  position: relative;
+}
+.top-bar .run-code {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0px;
+  background-color: #158d15;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  box-shadow: -2px 2px 0 2px #084608;
+  transition: 0.3s;
+}
+.top-bar .run-code:active {
+  transition: 0s;
+  box-shadow: 0px 0px 0 0px #084608;
+  transform: translate(-2px, 2px);
 }
 
 .split-wrapper {
