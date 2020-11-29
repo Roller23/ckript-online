@@ -18,13 +18,13 @@
     // Read the language documentation here
     str greeting = 'Hello world';
     println(greeting);
-  `;
+  `.trim().split('\n').map(s => s.trim()).join('\n');
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
     lineNumbers: true,
     mode: 'text/x-c',
     theme: 'monokai',
-    value: initialCode.trim(),
+    value: initialCode,
     indentUnit: 2,
     tabSize: 4,
     indentWithTabs: true,
