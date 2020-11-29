@@ -48,6 +48,45 @@ arr tableSquared = (function>(arr tab) arr { // capture outside variables with t
 })(table); // immediate function invocation
 
 println(tableSquared);
+
+// memory allocation
+
+alloc int mem1 = 5; // 5 is allocated on the heap and 'mem1' is a pointer to that location
+ref int mem2 = mem1; // 'mem2' points to the 'mem1' location
+
+mem2 += 8;
+
+println('mem1 is @1, mem2 is @2'(mem1, mem2)); // string interpolation
+
+// Functions can accept refs, arrays can hold refs
+
+del mem1; // free memory from the heap, both mem1 and mem2 should no longer be used
+
+// Classes and objects
+
+class Person(str name, int age); // declare a class
+
+obj Mark = Person("Mark", 25);
+
+println(Mark);
+println(Mark.age);
+
+$Mark.age = 30; // reassign a member ($ is required)
+
+println(Mark);
+
+// 'this' variable
+
+// Only allocated objects can have function members that make use of 'this'
+
+class Test(int number, func method);
+
+alloc obj a = Test(5, function(void) void {
+  println('My number is', this.number);
+});
+
+a.method();
+
   `.trim();
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
