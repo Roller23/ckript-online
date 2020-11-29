@@ -22,7 +22,8 @@
     }
   });
 
-  let initialCode = `  // Welcome to Ckript online interpreter
+  let initialCode =
+`  // Welcome to Ckript online interpreter
   // Read the language documentation here (Work in progress)
   // Check out the github repositories
   // https://github.com/Roller23/ckript-lang
@@ -141,7 +142,7 @@
   // Click 'Run' to run this example
   // The code is interpreted by your browser thanks to the wonders of WebAssembly
 
-  // Check out the documentation for more in-depth info (Work in progress)`;
+  // Check out the documentation for more in-depth info (Work in progress)`
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
     lineNumbers: true,
