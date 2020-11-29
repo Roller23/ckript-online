@@ -139,7 +139,10 @@
     autocorrect: false,
     autocapitalize: false,
     smartIndent: true,
-    autofocus: true
+    autofocus: true,
+    autoCloseBrackets: true,
+    matchBrackets: true,
+    
   });
 
   if (typeof localStorage.lastCode === 'string') {
