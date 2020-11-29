@@ -64,7 +64,7 @@
   alloc int mem1 = 5; // 5 is allocated on the heap and 'mem1' is a pointer to that location
   ref int mem2 = mem1; // 'mem2' points to the 'mem1' location
 
-  mem2 += 8;
+  mem2 += 8; // dereferencing is implicit
 
   println('mem1 is @1, mem2 is @2'(mem1, mem2)); // string interpolation
 
