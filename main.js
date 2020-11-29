@@ -13,6 +13,10 @@
     runCode(code);
   });
 
+  document.querySelector('.get-docs').addEventListener('click', e => {
+    alert("Work in progress! Read https://github.com/Roller23/ckript-lang in the meantime");
+  });
+
   let initialCode = `  // Welcome to Ckript online interpreter
   // Read the language documentation here (Work in progress)
   // Check out the github repositories
