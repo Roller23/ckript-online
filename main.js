@@ -7,7 +7,7 @@
     div.innerText = text;
     output.appendChild(div);
   }
-  document.querySelector('button').addEventListener('click', e => {
+  document.querySelector('.run-code').addEventListener('click', e => {
     output.innerHTML = '';
     let code = editor.getValue();
     runCode(code);
@@ -96,7 +96,7 @@ a.method();
 
 // while, for, if, else statements and the like work just like in any other C-like language
 
-// Check out the documentation for more in-depth info
+// Check out the documentation for more in-depth info (Work in progress)
 
   `.trim();
 
