@@ -276,7 +276,7 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
 
   // Do not use this. Use the cTypes function below. This is global just to avoid
   // excessive calls when cTypes is being called multiple times during a parse.
-  var basicCTypes = words("int double void bool func arr obj");
+  var basicCTypes = words("int double void bool func arr obj str");
 
   // Do not use this. Use the objCTypes function below. This is global just to avoid
   // excessive calls when objCTypes is being called multiple times during a parse.
@@ -412,7 +412,7 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
     blockKeywords: words(cBlockKeywords),
     defKeywords: words(cDefKeywords),
     typeFirstDefinitions: true,
-    atoms: words("NULL true false"),
+    atoms: words("true false function array object this"),
     isReservedIdentifier: cIsReservedIdentifier,
     hooks: {
       "#": cppHook,
