@@ -2,6 +2,24 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #818181;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #9b9b9b;
+}
+
 body {
   margin: 0px;
 }
@@ -19,16 +37,18 @@ body {
   width: 100%;
   height: calc(100vh - 60px);
   display: flex;
-  background-color: #1E1E1E;
-  padding: 10px;
+  background-color: black;
+  padding: 20px;
 }
 .split-wrapper .code-wrap {
   height: 100%;
   width: 70%;
+  border-radius: 10px;
 }
 .split-wrapper .terminal-wrap {
   height: 100%;
   width: 30%;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
