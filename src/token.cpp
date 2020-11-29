@@ -50,7 +50,9 @@ std::string Token::get_name(TokenType type) {
   REG(NONE, "empty token");
   REG(GENERAL_EXPRESSION, "expression");
   REG(GENERAL_STATEMENT, "statement");
-  return {1, (char)type};
+  std::string s = "";
+  s += (char)type;
+  return s;
 }
 
 std::string Token::get_name(void) const {
