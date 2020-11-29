@@ -44,14 +44,14 @@
 
   arr table = array(1, 2, 3) int;
 
-  arr tableSquared = (function>(arr tab) arr { // capture outside variables with the '>' operator
+  arr tableSquared = (function(arr tab, func transformator) arr {
     int i = 0;
     arr result = array() int;
     for (; i < size(tab); i += 1) {
-      result += square(tab[i]); // appending to the array
+      result += transformator(tab[i]); // appending to the array
     }
     return result;
-  })(table); // immediate function invocation
+  })(table, square); // immediate function invocation
 
   println(tableSquared);
 
