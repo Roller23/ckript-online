@@ -5,14 +5,13 @@
     // let div = document.createElement('div');
     // div.innerText = text;
     // setTimeout(() => output.appendChild(div), 0);
-    
+
   }
   document.querySelector('button').addEventListener('click', e => {
     document.querySelector('.output').innerHTML = '';
     let code = document.querySelector('textarea').value;
     console.log('sending to c', code);
-    let data = {Module, code};
-    worker.postMessage(data);
+    worker.postMessage(code);
     // runCode(document.querySelector('textarea').value);
   });
 })();
