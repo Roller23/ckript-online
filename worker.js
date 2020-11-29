@@ -27,11 +27,6 @@ var Module = {
     
   }
 };
-window.onerror = function(event) {
-  Module.setStatus = function(text) {
-    if (text) console.error(text);
-  };
-};
 
 function runCode(code) {
   Module.ccall('runCode', null, ['string'], [code]);
