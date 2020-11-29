@@ -40,6 +40,27 @@
 
   println('6 squared is ' + square(6)); // string concatenation
 
+  // to capture outside variables, use the '>' operator after the function keyword
+
+  int outsideVariable = 42;
+
+  func canCapture = function>(void) void {
+    println(outsideVariable);
+  };
+
+  canCapture();
+
+  // functions can be declared inside other functions
+
+  func outer = function(void) int {
+    func inner = function(int arg) int {
+      return arg * 2;
+    };
+    return inner(5);
+  };
+
+  println('outer =', outer());
+
   // arrays
 
   arr table = array(1, 2, 3) int;
