@@ -29,6 +29,18 @@ body {
   flex-wrap: wrap;
 }
 
+.btn {
+  border: 0px;
+  background-color: #158d15;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  box-shadow: -2px 2px 0 2px #084608;
+  transition: 0.3s;
+  font-family: "Arial Black", sans-serif;
+  font-weight: bold;
+}
+
 .top-bar {
   height: 60px;
   background-color: #151515;
@@ -41,18 +53,23 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border: 0px;
-  background-color: #158d15;
-  color: white;
-  cursor: pointer;
-  outline: none;
-  box-shadow: -2px 2px 0 2px #084608;
-  transition: 0.3s;
 }
 .top-bar .run-code:active {
   transition: 0s;
   box-shadow: 0px 0px 0 0px #084608;
   transform: translate(calc(-50% - 2px), calc(-50% - 2px));
+}
+.top-bar .get-docs {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.top-bar .get-docs:active {
+  transition: 0s;
+  box-shadow: 0px 0px 0 0px #084608;
+  transform: translate(calc(-50% - 2px), -2px);
 }
 
 .split-wrapper {
