@@ -173,6 +173,10 @@
     localStorage.lastCode = editor.getValue();
   }, 1000);
 
-  Split(['#one', '#two'])
+  let panes = document.querySelectorAll('#one, #two');
+
+  Split(['#one', '#two'], {
+    sizes: [panes[0].scrollWidth, panes[0].scrollWidth],
+  })
 
 })();
