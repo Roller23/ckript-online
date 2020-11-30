@@ -548,8 +548,6 @@ class NativeStacktrace : public NativeFunction {
     }
 };
 
-// std::this_thread::sleep_for(std::chrono::milliseconds(x));
-
 class NativeSleep : public NativeFunction {
   public:
     Value execute(std::vector<Value> &args, std::int64_t line, CVM &VM) {
