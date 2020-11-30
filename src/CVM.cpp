@@ -201,17 +201,6 @@ class NativePrintln : public NativeFunction {
     }
 };
 
-class NativeFlush : public NativeFunction {
-  public:
-    Value execute(std::vector<Value> &args, std::int64_t line, CVM &VM) {
-      if (args.size() != 0) {
-        ErrorHandler::throw_runtime_error("flush() takes no arguments", line);
-      }
-      std::fflush(stdout);
-      return {Utils::VOID};
-    }
-};
-
 class NativeSize : public NativeFunction {
   public:
     Value execute(std::vector<Value> &args, std::int64_t line, CVM &VM) {
@@ -603,12 +592,11 @@ REG_FN(NativeCeil, ceil)
 REG_FN(NativeRound, round)
 
 void CVM::load_stdlib(void) {
-  globals.reserve(37);
+  globals.reserve(36);
   ADD_FN(NativeTimestamp, timestamp)
   ADD_FN(NativeInput, input)
   ADD_FN(NativePrint, print)
   ADD_FN(NativePrintln, println)
-  ADD_FN(NativeFlush, flush)
   ADD_FN(NativeTostr, to_str)
   ADD_FN(NativeExit, exit)
   ADD_FN(NativeToint, to_int)
