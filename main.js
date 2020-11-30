@@ -176,7 +176,7 @@
   let panes = document.querySelectorAll('#one, #two');
 
   Split(['#one', '#two'], {
-    sizes: [panes[0].scrollWidth, panes[0].scrollWidth],
+    sizes: [panes[0].scrollWidth, panes[1].scrollWidth],
   })
 
 })();
