@@ -17,7 +17,7 @@ var Module = {
   printErr: function(text) {
     if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
     if (text.includes('terminated')) {
-      Module.printCallback(text);
+      Module.printCallback(text.substring(text.indexOf('Program terminated')));
     } else {
       console.error(text);
     }
