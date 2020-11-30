@@ -207,7 +207,7 @@ class NativeFlush : public NativeFunction {
       if (args.size() != 0) {
         ErrorHandler::throw_runtime_error("flush() takes no arguments", line);
       }
-      std::cout << std::flush;
+      std::fflush(stdout);
       return {Utils::VOID};
     }
 };
