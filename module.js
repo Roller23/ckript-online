@@ -18,9 +18,7 @@ var Module = {
     if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
     console.error(text);
   },
-  canvas: (function() {
-    return null;
-  })(),
+  canvas: null,
   setStatus: function(text) {
 
   },
