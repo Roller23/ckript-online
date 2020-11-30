@@ -5,7 +5,7 @@
     console.log('WASM output:\n', text);
     let div = document.createElement('div');
     div.classList.add('line');
-    div.innerHTML = '&nbsp;';
+    div.innerHTML = '&#8203;';
     div.innerText += text;
     output.appendChild(div);
     terminal.scrollTop = terminal.scrollHeight * 2;
