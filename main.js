@@ -177,6 +177,7 @@
 
   Split(['#one', '#two'], {
     sizes: [panes[0].scrollWidth, panes[1].scrollWidth],
+    gutterSize: 20
   })
 
 })();
