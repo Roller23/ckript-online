@@ -171,11 +171,11 @@ class NativeInput : public NativeFunction {
     }
 };
 
-class NativePrintln : public NativeFunction {
+class NativePrint : public NativeFunction {
   public:
     Value execute(std::vector<Value> &args, std::int64_t line, CVM &VM) {
       if (args.size() == 0) {
-        ErrorHandler::throw_runtime_error("println() expects at least one argument", line);
+        ErrorHandler::throw_runtime_error("print() expects at least one argument", line);
       }
       int i = 0;
       for (auto &arg : args) {
@@ -183,7 +183,31 @@ class NativePrintln : public NativeFunction {
         if (i != args.size() - 1) std::cout << " ";
         i++;
       }
+      return {Utils::VOID};
+    }
+};
+
+class NativePrintln : public NativeFunction {
+  public:
+    Value execute(std::vector<Value> &args, std::int64_t line, CVM &VM) {
+      int i = 0;
+      for (auto &arg : args) {
+        std::cout << VM.stringify(arg);
+        if (i != args.size() - 1) std::cout << " ";
+        i++;
+      }
       std::cout << std::endl;
+      return {Utils::VOID};
+    }
+};
+
+class NativeFlush : public NativeFunction {
+  public:
+    Value execute(std::vector<Value> &args, std::int64_t line, CVM &VM) {
+      if (args.size() != 0) {
+        ErrorHandler::throw_runtime_error("flush() takes no arguments", line);
+      }
+      std::cout << std::flush;
       return {Utils::VOID};
     }
 };
@@ -579,10 +603,12 @@ REG_FN(NativeCeil, ceil)
 REG_FN(NativeRound, round)
 
 void CVM::load_stdlib(void) {
-  globals.reserve(35);
+  globals.reserve(37);
   ADD_FN(NativeTimestamp, timestamp)
   ADD_FN(NativeInput, input)
+  ADD_FN(NativePrint, print)
   ADD_FN(NativePrintln, println)
+  ADD_FN(NativeFlush, flush)
   ADD_FN(NativeTostr, to_str)
   ADD_FN(NativeExit, exit)
   ADD_FN(NativeToint, to_int)
