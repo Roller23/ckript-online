@@ -173,8 +173,6 @@
     localStorage.lastCode = editor.getValue();
   }, 1000);
 
-  Split(['#one', '#two'], {
-    sizes: [25, 75],
-  })
+  Split(['#one', '#two'])
 
 })();
