@@ -2,7 +2,7 @@ output=ckript
 mem=100MB
 mem_flags=-s INITIAL_MEMORY=$(mem) -s MAXIMUM_MEMORY=$(mem) -s ALLOW_MEMORY_GROWTH=0
 exports=-s "EXTRA_EXPORTED_RUNTIME_METHODS=['ccall']"
-misc=-s ENVIRONMENT='web'
+misc=-s ENVIRONMENT=web,worker -s PROXY_TO_PTHREAD -s USE_PTHREADS
 files=src/*.cpp
 
 all:
