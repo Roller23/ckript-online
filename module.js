@@ -16,7 +16,11 @@ var Module = {
   })(),
   printErr: function(text) {
     if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
-    console.error(text);
+    if (text.includes('terminated')) {
+      Module.printCallback(text);
+    } else {
+      console.error(text);
+    }
   },
   canvas: null,
   setStatus: function(text) {
