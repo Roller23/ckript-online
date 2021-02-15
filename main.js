@@ -178,6 +178,10 @@
   Split(['#one', '#two'], {
     sizes: [panes[0].scrollWidth, panes[1].scrollWidth],
     gutterSize: 400
-  })
+  });
+
+  if (!('Atomics' in window)) {
+    alert("Your browser does not support a feature needed to fully run this app. Please use the latest version of Chrome, Edge, or Firefox");
+  }
 
 })();
