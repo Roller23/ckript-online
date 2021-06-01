@@ -17,7 +17,6 @@
   });
 
   document.querySelector('.get-docs').addEventListener('click', e => {
-    alert("Work in progress! Read https://github.com/Roller23/ckript-lang in the meantime");
     if (confirm('Would you like to paste example code again? (Will overwrite current code')) {
       editor.setValue(initialCode);
     }
@@ -29,6 +28,9 @@
   // Check out the github repositories
   // https://github.com/Roller23/ckript-lang
   // https://github.com/Roller23/ckript-online
+  // https://github.com/Roller23/ckript-js
+
+  // This version of Ckript is a little outdated, but serves as a good example
 
   // Quick start:
 
@@ -141,9 +143,7 @@
   // https://github.com/Roller23/ckript-lang#standard-library
 
   // Click 'Run' to run this example
-  // The code is interpreted by your browser thanks to the wonders of WebAssembly
-
-  // Check out the documentation for more in-depth info (Work in progress)`
+  // The code is interpreted by your browser thanks to the wonders of WebAssembly`
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
     lineNumbers: true,
