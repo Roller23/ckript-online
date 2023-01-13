@@ -103,8 +103,8 @@
 
   // memory allocation
 
-  alloc int mem1 = 5; // 5 is allocated on the heap and 'mem1' is a pointer to that location
-  ref int mem2 = mem1; // 'mem2' points to the 'mem1' location
+  alloc num mem1 = 5; // 5 is allocated on the heap and 'mem1' is a pointer to that location
+  ref num mem2 = mem1; // 'mem2' points to the 'mem1' location
 
   mem2 += 8; // dereferencing is implicit
 
