@@ -1,7 +1,10 @@
-(function() {
+(() => {
+  const interpreter = new Interpreter();
+
   const output = document.querySelector('.output');
   const terminal = document.querySelector('.terminal-wrap');
-  Module.printCallback = function(text) {
+
+  function printOutput(text) {
     console.log('WASM output:\n', text);
     const div = document.createElement('div');
     div.classList.add('line');
@@ -10,9 +13,13 @@
     output.appendChild(div);
     terminal.scrollTop = terminal.scrollHeight * 2;
   }
+
+  interpreter.onOutput(printOutput)
+  interpreter.onError(printOutput)
+
   document.querySelector('.run-code').addEventListener('click', () => {
     output.innerHTML = '';
-    runCode(editor.getValue());
+    interpreter.processCode(editor.getValue())
   });
 
   document.querySelector('.get-docs').addEventListener('click', () => {
