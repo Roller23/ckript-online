@@ -1,48 +1,51 @@
-(function() {
-  let output = document.querySelector('.output');
-  let terminal = document.querySelector('.terminal-wrap');
-  Module.printCallback = function(text) {
-    console.log('WASM output:\n', text);
-    let div = document.createElement('div');
+(() => {
+  const interpreter = new Interpreter();
+
+  const output = document.querySelector('.output');
+  const terminal = document.querySelector('.terminal-wrap');
+
+  function printOutput(text) {
+    const div = document.createElement('div');
     div.classList.add('line');
     div.innerHTML = '&#8203;';
     div.innerText += text;
     output.appendChild(div);
     terminal.scrollTop = terminal.scrollHeight * 2;
   }
-  document.querySelector('.run-code').addEventListener('click', e => {
+
+  interpreter.onOutput(printOutput)
+  interpreter.onError(printOutput)
+
+  document.querySelector('.run-code').addEventListener('click', () => {
     output.innerHTML = '';
-    let code = editor.getValue();
-    runCode(code);
+    interpreter.processCode(editor.getValue())
   });
 
-  document.querySelector('.get-docs').addEventListener('click', e => {
+  document.querySelector('.get-docs').addEventListener('click', () => {
     if (confirm('Would you like to paste example code again? (Will overwrite current code')) {
       editor.setValue(initialCode);
     }
   });
 
-  let initialCode =
+  const initialCode =
 `  // Welcome to Ckript online interpreter
   // Read the language documentation here https://github.com/Roller23/ckript-lang
   // Check out related Github repositories
   // https://github.com/Roller23/ckript-online
   // https://github.com/Roller23/ckript-js
 
-  // This version of Ckript is a little outdated, but serves as a good example
-
   // Quick start:
 
   // Creating variables
 
   str greeting = 'Hello world';
-  const double PI = 3.1415; // non reassignable
+  const num PI = 3.1415; // non reassignable
   // printing to the console
   println(greeting, 'PI is', PI);
 
   // functions
 
-  func square = function(int x) int {
+  func square = function(num x) num {
     return x * x;
   };
 
@@ -50,7 +53,7 @@
 
   // to capture outside variables, use the '>' operator after the function keyword
 
-  int outsideVariable = 42;
+  num outsideVariable = 42;
 
   func canCapture = function>(void) void {
     println(outsideVariable);
@@ -60,8 +63,8 @@
 
   // functions can be declared inside other functions
 
-  func outer = function(void) int {
-    func inner = function(int arg) int {
+  func outer = function(void) num {
+    func inner = function(num arg) num {
       return arg * 2;
     };
     return inner(5);
@@ -71,12 +74,12 @@
 
   // arrays
 
-  arr table = array(1, 2, 3) int;
+  arr table = array(1, 2, 3) num;
 
   arr tableSquared = (function(arr tab, func transformator) arr {
-    int i = 0;
-    arr result = array() int;
-    for (; i < size(tab); i += 1) {
+    num i = 0;
+    arr result = array() num;
+    for (; i < sizeof(tab); i += 1) {
       result += transformator(tab[i]); // appending to the array
     }
     return result;
@@ -90,13 +93,13 @@
 
   // preallocated arrays
 
-	arr preallocated = array() [3] double;
+  arr preallocated = array() [3] num;
 
-	#preallocated[0] = 1.23;
-	#preallocated[1] = 4.56;
-	#preallocated[2] = 7.89;
+  #preallocated[0] = 1.23;
+  #preallocated[1] = 4.56;
+  #preallocated[2] = 7.89;
 
-	println(preallocated);
+  println(preallocated);
 
   // memory allocation
 
@@ -109,11 +112,11 @@
 
   // Functions can accept refs, arrays can hold refs
 
-  del mem1; // free memory from the heap, both mem1 and mem2 should no longer be used
+  println('mem1 is @1, mem2 is @2'(mem1, mem2)); // string interpolation
 
   // Classes and objects
 
-  class Person(str name, int age); // declare a class
+  class Person(str name, num age); // declare a class
 
   obj Mark = Person("Mark", 25); // create an instance
 
@@ -128,7 +131,7 @@
 
   // Only allocated objects can have function members that make use of 'this'
 
-  class Test(int number, func method);
+  class Test(num number, func method);
 
   alloc obj a = Test(5, function(void) void {
     println('My number is', this.number);
@@ -141,8 +144,7 @@
   // Ckript includes a small native standard library, a short overview can be found there
   // https://github.com/Roller23/ckript-lang#standard-library
 
-  // Click 'Run' to run this example
-  // The code is interpreted by your browser thanks to the wonders of WebAssembly`
+  // Click 'Run' to run this example`
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
     lineNumbers: true,
@@ -168,19 +170,8 @@
     editor.setValue(localStorage.lastCode);
   }
 
-  let saveCodeInterval = setInterval(() => {
+  setInterval(() => {
     localStorage.lastCode = editor.getValue();
   }, 1000);
-
-  let panes = document.querySelectorAll('#one, #two');
-
-  Split(['#one', '#two'], {
-    sizes: [panes[0].scrollWidth, panes[1].scrollWidth],
-    gutterSize: 400
-  });
-
-  if (!('Atomics' in window)) {
-    alert("Your browser does not support a feature needed to fully run this app. Please use the latest version of Chrome, Edge, or Firefox");
-  }
 
 })();

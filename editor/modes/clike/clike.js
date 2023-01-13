@@ -266,9 +266,9 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
       return words.propertyIsEnumerable(word);
     }
   }
-  var cKeywords = "if break continue return else for while const class del alloc ref";
+  var cKeywords = "if break continue return else for while const class alloc ref";
 
-  var cppKeywords = "class del alloc ref"
+  var cppKeywords = "class alloc ref"
 
   var objCKeywords = ""
 
@@ -276,7 +276,7 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
 
   // Do not use this. Use the cTypes function below. This is global just to avoid
   // excessive calls when cTypes is being called multiple times during a parse.
-  var basicCTypes = words("int double void bool func arr obj str");
+  var basicCTypes = words("num void bool func arr obj str");
 
   // Do not use this. Use the objCTypes function below. This is global just to avoid
   // excessive calls when objCTypes is being called multiple times during a parse.
