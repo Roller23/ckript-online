@@ -1,35 +1,32 @@
 (function() {
-  let output = document.querySelector('.output');
-  let terminal = document.querySelector('.terminal-wrap');
+  const output = document.querySelector('.output');
+  const terminal = document.querySelector('.terminal-wrap');
   Module.printCallback = function(text) {
     console.log('WASM output:\n', text);
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.classList.add('line');
     div.innerHTML = '&#8203;';
     div.innerText += text;
     output.appendChild(div);
     terminal.scrollTop = terminal.scrollHeight * 2;
   }
-  document.querySelector('.run-code').addEventListener('click', e => {
+  document.querySelector('.run-code').addEventListener('click', () => {
     output.innerHTML = '';
-    let code = editor.getValue();
-    runCode(code);
+    runCode(editor.getValue());
   });
 
-  document.querySelector('.get-docs').addEventListener('click', e => {
+  document.querySelector('.get-docs').addEventListener('click', () => {
     if (confirm('Would you like to paste example code again? (Will overwrite current code')) {
       editor.setValue(initialCode);
     }
   });
 
-  let initialCode =
+  const initialCode =
 `  // Welcome to Ckript online interpreter
   // Read the language documentation here https://github.com/Roller23/ckript-lang
   // Check out related Github repositories
   // https://github.com/Roller23/ckript-online
   // https://github.com/Roller23/ckript-js
-
-  // This version of Ckript is a little outdated, but serves as a good example
 
   // Quick start:
 
@@ -141,8 +138,7 @@
   // Ckript includes a small native standard library, a short overview can be found there
   // https://github.com/Roller23/ckript-lang#standard-library
 
-  // Click 'Run' to run this example
-  // The code is interpreted by your browser thanks to the wonders of WebAssembly`
+  // Click 'Run' to run this example`
 
   const editor = CodeMirror(document.querySelector('.code-wrap'), {
     lineNumbers: true,
@@ -168,19 +164,8 @@
     editor.setValue(localStorage.lastCode);
   }
 
-  let saveCodeInterval = setInterval(() => {
+  setInterval(() => {
     localStorage.lastCode = editor.getValue();
   }, 1000);
-
-  let panes = document.querySelectorAll('#one, #two');
-
-  Split(['#one', '#two'], {
-    sizes: [panes[0].scrollWidth, panes[1].scrollWidth],
-    gutterSize: 400
-  });
-
-  if (!('Atomics' in window)) {
-    alert("Your browser does not support a feature needed to fully run this app. Please use the latest version of Chrome, Edge, or Firefox");
-  }
 
 })();
