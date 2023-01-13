@@ -1,9 +1,8 @@
 # Online Ckript interpreter
 
-An online version of Ckript interpreter, powered by WebAssembly
+An online version of Ckript interpreter
 Check it out here: https://ckript.netlify.app
 
-**This project is no longer maintained, the runtime is outdated. Right now I mostly work on:**
-
-- Javascript version: https://github.com/Roller23/ckript-js
+- Node.js version: https://github.com/Roller23/ckript-js
+- Browser version: https://github.com/Roller23/ckript-browser (used here)
 - C++ version: https://github.com/Roller23/ckript-lang
