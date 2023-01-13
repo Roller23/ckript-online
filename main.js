@@ -5,7 +5,6 @@
   const terminal = document.querySelector('.terminal-wrap');
 
   function printOutput(text) {
-    console.log('WASM output:\n', text);
     const div = document.createElement('div');
     div.classList.add('line');
     div.innerHTML = '&#8203;';
