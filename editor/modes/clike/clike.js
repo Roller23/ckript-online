@@ -266,9 +266,9 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
       return words.propertyIsEnumerable(word);
     }
   }
-  var cKeywords = "if break continue return else for while const class del alloc ref";
+  var cKeywords = "if break continue return else for while const class";
 
-  var cppKeywords = "class del alloc ref"
+  var cppKeywords = "class"
 
   var objCKeywords = ""
 
