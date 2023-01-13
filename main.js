@@ -40,13 +40,13 @@
   // Creating variables
 
   str greeting = 'Hello world';
-  const double PI = 3.1415; // non reassignable
+  const num PI = 3.1415; // non reassignable
   // printing to the console
   println(greeting, 'PI is', PI);
 
   // functions
 
-  func square = function(int x) int {
+  func square = function(num x) num {
     return x * x;
   };
 
@@ -54,7 +54,7 @@
 
   // to capture outside variables, use the '>' operator after the function keyword
 
-  int outsideVariable = 42;
+  num outsideVariable = 42;
 
   func canCapture = function>(void) void {
     println(outsideVariable);
@@ -64,8 +64,8 @@
 
   // functions can be declared inside other functions
 
-  func outer = function(void) int {
-    func inner = function(int arg) int {
+  func outer = function(void) num {
+    func inner = function(num arg) num {
       return arg * 2;
     };
     return inner(5);
@@ -75,12 +75,12 @@
 
   // arrays
 
-  arr table = array(1, 2, 3) int;
+  arr table = array(1, 2, 3) num;
 
   arr tableSquared = (function(arr tab, func transformator) arr {
-    int i = 0;
-    arr result = array() int;
-    for (; i < size(tab); i += 1) {
+    num i = 0;
+    arr result = array() num;
+    for (; i < sizeof(tab); i += 1) {
       result += transformator(tab[i]); // appending to the array
     }
     return result;
@@ -94,30 +94,21 @@
 
   // preallocated arrays
 
-	arr preallocated = array() [3] double;
+  arr preallocated = array() [3] num;
 
-	#preallocated[0] = 1.23;
-	#preallocated[1] = 4.56;
-	#preallocated[2] = 7.89;
+  #preallocated[0] = 1.23;
+  #preallocated[1] = 4.56;
+  #preallocated[2] = 7.89;
 
-	println(preallocated);
+  println(preallocated);
 
-  // memory allocation
-
-  alloc int mem1 = 5; // 5 is allocated on the heap and 'mem1' is a pointer to that location
-  ref int mem2 = mem1; // 'mem2' points to the 'mem1' location
-
-  mem2 += 8; // dereferencing is implicit
-
+  const str mem1 = "Hello";
+  const str mem2 = "World";
   println('mem1 is @1, mem2 is @2'(mem1, mem2)); // string interpolation
-
-  // Functions can accept refs, arrays can hold refs
-
-  del mem1; // free memory from the heap, both mem1 and mem2 should no longer be used
 
   // Classes and objects
 
-  class Person(str name, int age); // declare a class
+  class Person(str name, num age); // declare a class
 
   obj Mark = Person("Mark", 25); // create an instance
 
@@ -132,7 +123,7 @@
 
   // Only allocated objects can have function members that make use of 'this'
 
-  class Test(int number, func method);
+  class Test(num number, func method);
 
   alloc obj a = Test(5, function(void) void {
     println('My number is', this.number);
