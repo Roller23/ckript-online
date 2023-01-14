@@ -12,12 +12,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #818181;
+  background-color: rgb(129, 129, 129);
   border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background-color: #9b9b9b;
+  background-color: rgb(155, 155, 155);
 }
 
 body {
@@ -31,11 +31,11 @@ body {
 
 .btn {
   border: 0px;
-  background-color: #158d15;
+  background-color: rgb(21, 141, 21);
   color: white;
   cursor: pointer;
   outline: none;
-  box-shadow: -2px 2px 0 2px #084608;
+  box-shadow: -2px 2px 0 2px rgb(8, 70, 8);
   transition: 0.3s;
   font-family: "Arial Black", sans-serif;
   font-weight: bold;
@@ -55,7 +55,7 @@ body {
 }
 .top-bar .run-code:active, .top-bar .get-docs:active {
   transition: 0s;
-  box-shadow: 0px 0px 0 0px #084608;
+  box-shadow: 0px 0px 0 0px rgb(8, 70, 8);
 }
 .top-bar .run-code {
   left: 50%;
@@ -76,7 +76,7 @@ body {
   width: 100%;
   height: calc(100vh - 60px);
   display: flex;
-  gap: 0px;
+  gap: 20px;
   background-color: #2c2c2c;
   padding: 20px;
 }
@@ -105,31 +105,25 @@ body {
   .top-bar {
     height: 40px !important;
   }
-
   .split-wrapper {
     height: calc(100vh - 40px) !important;
     flex-wrap: wrap !important;
     gap: 10px !important;
     padding: 10px !important;
   }
-
   .btn {
     padding: 3px 8px !important;
   }
-
   .code-wrap, .terminal-wrap {
     width: 100% !important;
   }
-
   .code-wrap {
     height: 70% !important;
   }
-
   .terminal-wrap {
     height: 30% !important;
     border-radius: 10px 10px 0px 0px !important;
   }
-
   .run-code {
     left: 20px !important;
     transform: translateY(-50%) !important;
