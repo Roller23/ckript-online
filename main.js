@@ -170,6 +170,10 @@
     editor.setValue(localStorage.lastCode);
   }
 
+  const saveInterval = setInterval(() => {
+    localStorage.lastCode = editor.getValue();
+  }, 1000);
+
   window.addEventListener("message", (event) => {
     let data = {};
     try {
@@ -177,15 +181,12 @@
     } catch (e) {
       return;
     }
+    clearInterval(saveInterval);
     if (data.event === 'code' && typeof data.code === 'string') {
       editor.setValue(data.code);
     } else if (data.event === 'run') {
       interpreter.processCode(editor.getValue());
     }
   });
-
-  setInterval(() => {
-    localStorage.lastCode = editor.getValue();
-  }, 1000);
 
 })();
