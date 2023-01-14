@@ -18,7 +18,7 @@
 
   document.querySelector('.run-code').addEventListener('click', () => {
     output.innerHTML = '';
-    interpreter.processCode(editor.getValue())
+    interpreter.processCode(editor.getValue());
   });
 
   document.querySelector('.get-docs').addEventListener('click', () => {
@@ -169,6 +169,20 @@
   if (typeof localStorage.lastCode === 'string') {
     editor.setValue(localStorage.lastCode);
   }
+
+  window.addEventListener("message", (event) => {
+    let data = {};
+    try {
+      data = JSON.parse(event.data);
+    } catch (e) {
+      return;
+    }
+    if (data.event === 'code' && typeof data.code === 'string') {
+      editor.setValue(data.code);
+    } else if (data.event === 'run') {
+      interpreter.processCode(editor.getValue());
+    }
+  }, false);
 
   setInterval(() => {
     localStorage.lastCode = editor.getValue();
