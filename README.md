@@ -7,7 +7,7 @@ Check it out here: https://ckript.netlify.app
 ## How to embed
 
 The online version of Ckript listens for `message` events.
-It can be embedded in an iframe and controlled by `Window.postMessage`.
+It can be embedded in an iframe and controlled with `Window.postMessage`.
 
 Example usage:
 
