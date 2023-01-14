@@ -183,7 +183,7 @@
     } else if (data.event === 'run') {
       interpreter.processCode(editor.getValue());
     }
-  }, false);
+  });
 
   setInterval(() => {
     localStorage.lastCode = editor.getValue();
